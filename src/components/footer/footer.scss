@@ -1,0 +1,13 @@
+.footer{
+    padding: 10px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    font-family: 'Open Sans', sans-serif;
+
+    .footer-text{
+        font-family: var(--ibm);
+        font-size: 17px;
+    }
+}
