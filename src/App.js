@@ -7,6 +7,8 @@ import Footer from './components/footer/footer';
 import BookPage from './pages/book/bookPage';
 import MenuPage from './pages/menuPage/menuPage';
 import CareerPage from './pages/careerPage/careerPage';
+import Contacts from './pages/contacts/contacts';
+
 function App() {
   return (
     
@@ -16,6 +18,7 @@ function App() {
       <Routes>
       <Route path='/' element={<MainPage/> }/>
       <Route path='/booking' element={<BookPage/> }/>
+      <Route path='/contacts' element={<Contacts/>}/>
       <Route path='/menu' element={<MenuPage />}/>
       <Route path='/career' element={<CareerPage/>}/>
       </Routes>
