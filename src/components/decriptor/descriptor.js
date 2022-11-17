@@ -10,7 +10,7 @@ function Descriptor() {
             <button className='descr-button'><Link className='menu-link' to={'/booking'}>Забронировать стол</Link></button>
             <button className='descr-button'><Link className='menu-link' to={'/delivery'}>Доставка</Link></button>
         </div>
-
+    
     </div>
   )
 }

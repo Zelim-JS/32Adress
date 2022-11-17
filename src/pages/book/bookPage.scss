@@ -1,13 +1,13 @@
 .book-wrapper{
     display: grid;
-    grid-template-rows: 70px 1fr 100px;
+    grid-template-rows: 70px 1fr 90px;
     grid-template-areas: 'label'
     'main'
     'control';
     width: 520px;
-    height: 620px;
+    min-height: 620px;
     background-color: var(--white);
-    margin: 100px auto 100px;
+    margin: 40px auto 100px;
     color: var(--black);
 
     .book-label{
@@ -17,8 +17,11 @@
         padding: 0 32px;
         border-bottom: 1px solid var(--secondary);
         font-family: var(--ibm);
-        font-size: 18px;
-        font-weight: 600;
+        color: rgba(50, 49, 49, 0.813);
+        font-size: 16px;
+        font-weight: 300;
+        margin-bottom: 5px;
+        
     }
     .book-main{
         display: flex;
@@ -33,8 +36,13 @@
             text-align: center;
             align-items: center;
             margin-bottom: 20px;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
+            .label {
+                color: rgba(50, 49, 49, 0.813);
+              }
+
+            
             .book-input {
               padding: 10px;
               width: 300px;
@@ -42,14 +50,12 @@
               outline: none;
               resize: none;
               border-radius: 5px;
-              border: 2px solid var(--secondary);
-              
-              
+              border: 2px solid var(--secondary);           
             }
            
             .book-input:focus{
-                border: unset;
-                outline: 2px solid var(--pink);
+                border-color: #30d00400;
+                outline: 2px solid var(--green);
             }
     
             .inputs-wrapper {
@@ -58,9 +64,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                label {
-                  color: rgba(50, 49, 49, 0.813);
-                }
+                
             }
         } 
     }
@@ -69,6 +73,13 @@
         display: flex;
         grid: 'control';
         align-items:center;
+        justify-content: space-between;
+        padding: 0 32px;
+        p{
+            font-size: 12px;
+            font-weight: 300;
+            color: var(--grey)
+        }
         button{
             width: 120px;
             border-radius:5px;
@@ -77,11 +88,18 @@
             border: 2px solid var(--secondary);
             color: var(--secondary);
             transition:background 0.2s  linear;
+            cursor: pointer;
         }
-        button:hover{
+        .button-active{
             border: unset;
             color: var(--white);
-            background: #28bc00;
+            background: var(--green);
+        }
+
+        .button-active:hover{
+            border: unset;
+            color: var(--white);
+            background: #30d004;
         }
     }
 
