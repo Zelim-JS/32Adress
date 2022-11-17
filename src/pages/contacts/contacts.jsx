@@ -1,7 +1,12 @@
 import React from "react";
 import style from "./contacts.scss";
+import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
 
 function Contacts() {
+  const defaultState = {
+    center: [55.72092330517786,37.56091226242578],
+    zoom: 15,
+  };
   return (
     <div className="contacts-wrapper">
       <div className="logo">LOGO</div>
@@ -17,17 +22,26 @@ function Contacts() {
         </a>
       </div>
       <div className="time-work">
-        Время работы
+        Время работы:
         <div className="time-work-text">Пн-Вс 11:00 - 00:00</div>
       </div>
       <div className="contacts-adress">
-        Адрес
+        Адрес:
         <div className="contacts-adress-text">
           Проспект Жуковского дом32-119
         </div>
       </div>
+      <YMaps>
+        <Map className="map" defaultState={defaultState}>
+          <Placemark geometry={[55.72092330517786,37.56091226242578]} />
+        </Map>
+      </YMaps>
     </div>
   );
 }
 
 export default Contacts;
+
+// [55.7434523880501,37.68068128281868]
+
+//55.684758, 37.738521
