@@ -1,5 +1,7 @@
 import './iconsBar.scss'
-import {Call, Telegram, Whatsapp} from '../svg'
+import Call from '../svg/Call'
+import Telegram from '../svg/Telegramm'
+import Whatsapp from '../svg/Whapsapp'
 
 function IconsBar() {
   return (
