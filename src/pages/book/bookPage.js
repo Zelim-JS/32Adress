@@ -1,4 +1,6 @@
 import './bookPage.scss'
+
+import LogoComponent from '../../assets/svg/LogoComponent';
 import {useEffect, useState} from 'react'
 import { Formik } from "formik";
 import * as yup from "yup";
@@ -11,7 +13,6 @@ function Book() {
     user_count: yup.number().min(1, 'Минимум 1').typeError('Укажите число').required('Обязательное поле'),
     user_date: yup.date().required('Выберите дату')
   })
-
 
 
   return (
@@ -31,7 +32,7 @@ function Book() {
         
         <div className='book-wrapper'>
             <div className='book-label'>
-              Бронирование в 32Адрес
+             <span> Бронирование стола</span> <span className='logo black'><LogoComponent color='black'/></span>
             </div>
             <div className='book-main'>
               <div className='inputs-wrapper'>

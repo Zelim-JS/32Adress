@@ -3,7 +3,7 @@
     justify-content: space-between;
     .menu-items{
         display: flex;
-        gap: 20px;
+        gap: 30px;
         .menu-item{
             display: inline-block;
             font-family: var(--ibm);
@@ -15,7 +15,7 @@
     }
 
     .menu-logo{
-        font-size: 40px;
+        width: 185px;
         cursor: pointer;
     }
    
