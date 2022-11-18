@@ -23,4 +23,10 @@
 }
 
 
+@media (max-width:959px) {
+    .main{
+        padding: 10px 10px;
+    }
+}
+
 

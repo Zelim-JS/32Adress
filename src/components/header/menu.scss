@@ -30,3 +30,24 @@
     left: 0;
     top: 0;
 }
+
+@media (max-width: 1024px){
+    
+    .menu-wrapper{
+        .menu-items{
+            display: none;
+        }
+        .menu-logo{
+            width: 140px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-wrapper{
+    .menu-logo{
+        width: 120px;
+        cursor: pointer;
+    }
+}
+}
