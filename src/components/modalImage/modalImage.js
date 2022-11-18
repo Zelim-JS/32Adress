@@ -1,9 +1,10 @@
 import './moadalImage.scss'
-
-function ModalImage() {
-  return (
-    <div className='modal-image-wrapper'>
-        
+import {useState} from 'react'
+function ModalImage({img, close}) {
+  
+  return(
+    <div onClick={close} className='modal-image-wrapper'>
+    <img src={img} />
     </div>
   )
 }

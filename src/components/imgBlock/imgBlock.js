@@ -1,8 +1,8 @@
 import './imgBlock.scss'
 
-function ImgBlock({src}) {
+function ImgBlock({src, click}) {
   return (
-    <div className='img-block-wrapper'>
+    <div onClick={click} className='img-block-wrapper'>
         <img src={src} alt='image'/>
     </div>
   )

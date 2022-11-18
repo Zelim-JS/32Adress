@@ -1,8 +1,8 @@
 .img-block-wrapper {
-  width: 300px;
+  width: 400px;
   cursor: pointer;
   transition: all 0.2s linear;
-  border-radius: 5px;
+  border-radius: 3px;
   overflow: hidden;
   img {
     width: 100%;
@@ -10,4 +10,17 @@
 }
 .img-block-wrapper:hover {
   transform: scale(105%);
+}
+@media (max-width: 829px) {
+  .img-block-wrapper {
+    width: 80%;
+  }
+  
+}
+
+@media (max-width: 450px) {
+  .img-block-wrapper {
+    width: 100%;
+  }
+  
 }
