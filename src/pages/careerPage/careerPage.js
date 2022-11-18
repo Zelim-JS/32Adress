@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react'
 import { Formik } from "formik";
 import * as yup from "yup";
+import LogoComponent from '../../components/svg/LogoComponent'
 
 function CareerPage() {
     const [height, setHeight] = useState(42)
@@ -26,7 +27,7 @@ function CareerPage() {
             
             <div className='book-wrapper'>
                 <div className='book-label'>
-                  Вакансия в 32Адрес
+                <span>Заявка на вакансию</span> <span className='logo black'><LogoComponent color='black'/></span>
                 </div>
                 <div className='book-main'>
                   <div className='inputs-wrapper'>

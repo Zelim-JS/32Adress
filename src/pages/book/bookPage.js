@@ -1,6 +1,6 @@
 import './bookPage.scss'
 
-import LogoComponent from '../../assets/svg/LogoComponent';
+import LogoComponent from '../../components/svg/LogoComponent'
 import {useEffect, useState} from 'react'
 import { Formik } from "formik";
 import * as yup from "yup";
