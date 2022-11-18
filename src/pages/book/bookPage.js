@@ -8,7 +8,7 @@ import * as yup from "yup";
 function Book() {
   const [height, setHeight] = useState(42)
   const validationSchema = yup.object().shape({
-    user_name: yup.string().min(3, 'Минимум 3 символа').matches(/^[a-z]+$/, "Должны быть только буквы").typeError('Должно быть строкой').required('Обязательное поле'),
+    user_name: yup.string().min(3, 'Минимум 3 символа').matches(/^[a-zA-Zа-яА-Я]+$/, "Должны быть только буквы").typeError('Должно быть строкой').required('Обязательное поле'),
     user_phone:yup.string().matches(/^[0-9]+$/, "Должны быть только цифры").min(10, 'Укажите полный номер телефона 10 цифр').max(20, 'Введите корректный номер').required('Обязательное поле'),
     user_count: yup.number().min(1, 'Минимум 1').typeError('Укажите число').required('Обязательное поле'),
     user_date: yup.date().required('Выберите дату')
@@ -49,7 +49,7 @@ function Book() {
                       <label className='label'  htmlFor='user_date'>Выберите дату</label>
                       <input type={'date'} className='book-input '  name='user_date'
                       onBlur={handleBlur}
-                      value={values.user_name}
+                      value={values.user_date}
                       onChange={handleChange}
                       />
                       {touched.user_date && errors.user_date && <p className='error-message'>{errors.user_date}</p>}
