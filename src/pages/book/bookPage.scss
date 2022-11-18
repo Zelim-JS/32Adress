@@ -102,3 +102,43 @@
     }
   }
 }
+
+
+@media (max-width: 760px) {
+  .book-wrapper {
+    width: 440px;
+  }
+
+}
+
+@media (max-width: 550px) {
+  .book-wrapper {
+    width: 400px;
+  }
+
+}
+@media (max-width: 430px) {
+  .book-wrapper {
+    width: 330px;
+    .book-main {
+
+      .book-description{
+        .book-input {
+
+          padding: 5px;
+          width: 250px;
+          font-size: 16px;
+         
+        }
+      }
+    }
+    
+  }
+
+}
+@media (max-width: 330px) {
+  .book-wrapper {
+    width: 300px;
+  }
+
+}
