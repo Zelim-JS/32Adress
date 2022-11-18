@@ -54,6 +54,12 @@
   margin-bottom: 80px;}
 }
 
+@media (max-width:560px) {
+  .wrapper-descriptor {
+    padding: 0 10px;
+  }
+}
+
 @media (max-width: 1440px) {
   .wrapper-descriptor {
     margin-top: 60px;

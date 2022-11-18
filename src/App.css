@@ -29,4 +29,9 @@
     }
 }
 
+@media (max-width:560px) {
+    .main{
+        padding: 10px 0;
+    }
+}
 
