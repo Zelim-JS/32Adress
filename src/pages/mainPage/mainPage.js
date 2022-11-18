@@ -6,7 +6,9 @@ function MainPage() {
   return (
     <div className='main-content'>
             <Descriptor/>
+            <div className='corousel-main'>
             <Corousel />
+            </div>
     </div>
   )
 }
