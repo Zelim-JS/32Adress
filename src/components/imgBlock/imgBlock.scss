@@ -11,9 +11,14 @@
 .img-block-wrapper:hover {
   transform: scale(105%);
 }
+
+
 @media (max-width: 829px) {
   .img-block-wrapper {
     width: 80%;
+  }
+  .img-block-wrapper:hover {
+    transform: scale(100%);
   }
   
 }
