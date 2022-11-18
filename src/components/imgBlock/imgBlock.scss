@@ -1,0 +1,13 @@
+.img-block-wrapper {
+  width: 300px;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  border-radius: 5px;
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
+}
+.img-block-wrapper:hover {
+  transform: scale(105%);
+}

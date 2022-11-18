@@ -13,8 +13,6 @@ function Corousel() {
 
   return (
    <>
-   
-   {/* <img src='https://randomwordgenerator.com/img/picture-generator/business-businessmen-career-colorful-6805.jpg' /> */}
     <Carousel showThumbs={false} infiniteLoop={true} showStatus={false} swipeable={true} className='main-slide'>
 
      
