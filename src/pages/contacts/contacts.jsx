@@ -9,7 +9,6 @@ function Contacts() {
   };
   return (
     <div className="contacts-wrapper">
-      <div className="logo">LOGO</div>
       <div className="contacts-connection">
         <a className="contacts-number" href="+79850390039">
           + (798)503-90-039
@@ -31,11 +30,13 @@ function Contacts() {
           Проспект Жуковского дом32-119
         </div>
       </div>
-      <YMaps>
+     <div className="map-wrapper">
+     <YMaps>
         <Map className="map" defaultState={defaultState}>
           <Placemark geometry={[55.72092330517786,37.56091226242578]} />
         </Map>
       </YMaps>
+     </div>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import './mainPage.scss';
 import Descriptor from '../../components/decriptor/descriptor';
-import Corousel from '../../components/slider/corousel';
+import Corousel from '../../components/corousel/corousel';
 
 function MainPage() {
   return (
