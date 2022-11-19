@@ -1,5 +1,5 @@
 import './moadalImage.scss'
-import {useState} from 'react'
+
 function ModalImage({img, close}) {
   
   return(

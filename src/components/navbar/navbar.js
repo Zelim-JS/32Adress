@@ -1,18 +1,18 @@
 import { useState } from 'react'
 import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai';
-import './menu.scss';
+import './navbar.scss';
 import { Link } from 'react-router-dom'
 import LogoComponent from '../svg/LogoComponent';
 const menuArr = [{name:'Забронировать', link: '/booking'}, {name:'Меню',link: '/menu'}, {name:'Доставка',link: '/delivery'}, {name:'Контакты',link: '/contacts'}, {name:'Карьера',link: '/career'}, {name:'Галлерея',link: '/gallery'}]
 
-function Header() {
+function Navbar() {
   const [nav, setNav] = useState(false);
   return (
-    <div className="menu-wrapper">
-        <div className='menu-logo'><Link className='menu-link' to={'/'}><LogoComponent /></Link></div>
-        <div className={nav ? 'menu-items active' : 'menu-items'}>
+    <div className="nav-wrapper">
+        <div className='nav-logo'><Link className='nav-link' to={'/'}><LogoComponent /></Link></div>
+        <div className={nav ? 'nav-items active' : 'nav-items'}>
             {menuArr.map((item, i) =>{
-                return <li className="menu-item" key={i}>{<Link onClick={() => setNav(!nav)} to={item.link} className='menu-link'>{item.name}</Link>}</li>
+                return <li className="nav-item" key={i}>{<Link onClick={() => setNav(!nav)} to={item.link} className='menu-link'>{item.name}</Link>}</li>
             })}
             
         </div>
@@ -23,4 +23,4 @@ function Header() {
   )
 }
 
-export default Header
+export default Navbar

@@ -1,19 +1,34 @@
-import './bookPage.scss'
+import './booking.scss';
 
-import LogoComponent from '../../components/svg/LogoComponent'
-import {useEffect, useState} from 'react'
+import LogoComponent from '../svg/LogoComponent'
+import {useEffect, useState, useRef} from 'react'
+import emailjs from '@emailjs/browser';
 import { Formik } from "formik";
 import * as yup from "yup";
 
-function Book() {
-  const [height, setHeight] = useState(42)
+function Booking({succes, error}) {
+  const [height, setHeight] = useState(42);
+  const [status, setStatus] = useState(null);
   const validationSchema = yup.object().shape({
     user_name: yup.string().min(3, 'Минимум 3 символа').matches(/^[a-zA-Zа-яА-Я]+$/, "Должны быть только буквы").typeError('Должно быть строкой').required('Обязательное поле'),
     user_phone:yup.string().matches(/^[0-9]+$/, "Должны быть только цифры").min(10, 'Укажите полный номер телефона 10 цифр').max(20, 'Введите корректный номер').required('Обязательное поле'),
     user_count: yup.number().min(1, 'Минимум 1').typeError('Укажите число').required('Обязательное поле'),
     user_date: yup.date().required('Выберите дату')
   })
+  const form = useRef()
 
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_qhako9q', 'template_8ks49ae', form.current, '2T7QvaI7kHZVYd3VK')
+      .then((result) => {
+          succes()
+      }, (error) => {
+          error()
+      });
+
+      e.target.reset();
+  };
 
   return (
     <Formik
@@ -30,7 +45,7 @@ function Book() {
     >
       {({values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty}) =>(
         
-        <div className='book-wrapper'>
+        <form onSubmit={sendEmail} ref={form} className='book-wrapper'>
             <div className='book-label'>
              <span> Бронирование стола</span> <span className='logo black'><LogoComponent color='black'/></span>
             </div>
@@ -91,15 +106,14 @@ function Book() {
                   <button
                     className={isValid && dirty && 'button-active'}
                     disabled={!isValid && !dirty}
-                    onClick={handleSubmit}
                     type='submit'
                   >Заказать</button>
             </div>
-        </div>
+        </form>
       )}
     
     </Formik>
   )
 }
 
-export default Book
+export default Booking
