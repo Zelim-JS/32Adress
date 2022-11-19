@@ -15,7 +15,7 @@ function Corousel() {
    <>
     <Carousel emulateTouch={true} showThumbs={false} infiniteLoop={true} showStatus={false} swipeable={true}>
       {images.map((i, ind) =>{
-        return <div className='height'> <img className='img' src={i} /></div>
+        return <div key={ind} className='height'> <img className='img' src={i} /></div>
       })}
      </Carousel>
    </>

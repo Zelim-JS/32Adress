@@ -9,11 +9,13 @@ import MenuPage from './pages/menuPage/menuPage';
 import CareerPage from './pages/careerPage/careerPage';
 import Contacts from './pages/contacts/contacts';
 import GalleryPage from './pages/gallery/galleryPage';
+
 function App() {
   return (
     
     <div className="App">
       <div className='main'>
+        
       <Header/>
       <Routes>
       <Route path='/' element={<MainPage/> }/>
