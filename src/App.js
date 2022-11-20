@@ -10,11 +10,25 @@ import Career from './components/career/career';
 import Contacts from './pages/contacts/contacts';
 import GalleryPage from './pages/gallery/galleryPage';
 import withMessage from './common/hooks.js/withMessage';
+import Cart from './components/cart/cart';
+import { useState } from 'react';
 
-
-
+const cartArray = [
+  
+]
 
 function App() {
+  const [cartItems, setCartItems] = useState([
+    {name: 'Цезарь с куриной грудкой на гриле', img: 'https://eda.yandex/images/1380298/9057ba70a760213ab552e93eebc57969-450x300.jpg', count: 3,
+    price: 592},
+    {name: 'Цезарь с куриной грудкой на гриле', img: 'https://eda.yandex/images/1380298/9057ba70a760213ab552e93eebc57969-450x300.jpg', count: 3,
+    price: 592},
+    {name: 'Цезарь с куриной грудкой на гриле', img: 'https://eda.yandex/images/1380298/9057ba70a760213ab552e93eebc57969-450x300.jpg', count: 3,
+    price: 592},
+    {name: 'Цезарь с куриной грудкой на гриле', img: 'https://eda.yandex/images/1380298/9057ba70a760213ab552e93eebc57969-450x300.jpg', count: 3,
+    price: 592},
+    {name: 'Цезарь с куриной грудкой на гриле', img: 'https://eda.yandex/images/1380298/9057ba70a760213ab552e93eebc57969-450x300.jpg', count: 3,
+    price: 592}]);
   const BookPage = withMessage(Booking)
   const CareerPage = withMessage(Career)
   
@@ -25,7 +39,7 @@ function App() {
         
       <Navbar/>
       <Routes>
-      <Route path='/' element={<MainPage /> }/>
+      <Route path='/' element={<Cart items={cartItems} /> }/>
       <Route path='/booking' element={<BookPage/> }/>
       <Route path='/contacts' element={<Contacts/>}/>
       <Route path='/menu' element={<MenuPage />}/>

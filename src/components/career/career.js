@@ -6,9 +6,9 @@ import LogoComponent from '../svg/LogoComponent'
 function Career() {
     const [height, setHeight] = useState(42)
     const validationSchema = yup.object().shape({
-        user_name: yup.string().min(3, 'Минимум 3 символа').matches(/^[a-z]+$/, "Должны быть только буквы").typeError('Должно быть строкой').required('Обязательное поле'),
+        user_name: yup.string().min(3, 'Минимум 3 символа').matches(/^[a-zA-Zа-яА-Я]+$/, "Должны быть только буквы").typeError('Должно быть строкой').required('Обязательное поле'),
         user_phone:yup.string().matches(/^[0-9]+$/, "Должны быть только цифры").min(10, 'Укажите полный номер телефона 10 цифр').max(20, 'Введите корректный номер').required('Обязательное поле'),
-        user_surname: yup.string().min(3, 'Минимум 3 символа').matches(/^[a-z]+$/, "Должны быть только буквы").required('Обязательное поле')
+        user_surname: yup.string().min(3, 'Минимум 3 символа').matches(/^[a-zA-Zа-яА-Я]+$/, "Должны быть только буквы").required('Обязательное поле')
       })
 
   return (
