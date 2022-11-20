@@ -21,9 +21,9 @@ function Booking({succes, error}) {
     e.preventDefault();
 
     emailjs.sendForm('service_qhako9q', 'template_8ks49ae', form.current, '2T7QvaI7kHZVYd3VK')
-      .then((result) => {
+      .then((res) => {
           succes()
-      }, (error) => {
+      }, (err) => {
           error()
       });
 

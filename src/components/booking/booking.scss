@@ -61,6 +61,7 @@
   .book-control {
     display: flex;
     grid: "control";
+    gap: 10px;
     align-items: center;
     justify-content: space-between;
     padding: 0 32px;
