@@ -6,7 +6,7 @@ import emailjs from '@emailjs/browser';
 import { Formik } from "formik";
 import * as yup from "yup";
 
-function Booking({succes, error, loading}) {
+function Booking({succes, error, loading, items}) {
   const [height, setHeight] = useState(42);
   const [status, setStatus] = useState(null);
   const validationSchema = yup.object().shape({
@@ -16,14 +16,16 @@ function Booking({succes, error, loading}) {
     user_date: yup.date().required('Выберите дату')
   })
   const form = useRef()
-
+  const goods = items.map(i => `name: ${i.name} колл ${i.count}`).join(' ')
+  
   const sendEmail = (e) => {
     e.preventDefault();
     loading()
-    emailjs.sendForm('service_qhako9q', 'template_', form.current, '2T7QvaI7kHZVYd3VK')
+    emailjs.sendForm('service_qhako9q', 'template_8ks49ae', form.current, '2T7QvaI7kHZVYd3VK')
       .then((res) => {
           succes()
       }, (err) => {
+          console.log(err)
           error()
       });
 
@@ -38,6 +40,7 @@ function Booking({succes, error, loading}) {
       user_comment: '',
       user_date: '',
       user_count: '1',
+      user_items: ''
     }}
     validationSchema={validationSchema}
     validateOnBlur
@@ -96,11 +99,20 @@ function Booking({succes, error, loading}) {
                         }
                         } style={{height: height + 'px'}}  name='user_comment' />
                   </div>
+
+                  <div className='book-description' style={{display: 'none'}}>
+                      <label className='label'  htmlFor='user_items'>Товары</label>
+                      <textarea className='book-input' value={goods} onChange={(e) => { 
+                        if(e.target.scrollHeight <= 85){
+                          setHeight(e.target.scrollHeight)}
+                        }
+                        } style={{height: height + 'px'}}  name='user_items' />
+                  </div>
               
               </div>
 
             </div>
-
+            
             <div className='book-control'>
               <p>Служба поддержки: Обращение в техподдержку</p>
                   <button

@@ -11,7 +11,7 @@ function Cart({items}) {
       user_phone:yup.string().matches(/^[0-9]+$/, "Должны быть только цифры").min(10, 'Укажите полный номер телефона 10 цифр').max(20, 'Введите корректный номер').required('Обязательное поле'),
       user_address: yup.string().min(3, 'Минимум 5 символа').matches(/^[a-zA-Zа-яА-Я]+$/, "Должны быть только буквы").required('Обязательное поле')
     })
-
+   
 
   return (
     <div className='cart-wrapper'>
