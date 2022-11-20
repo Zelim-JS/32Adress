@@ -29,32 +29,29 @@ function App() {
     price: 592},
     {name: 'Цезарь с куриной грудкой на гриле', img: 'https://eda.yandex/images/1380298/9057ba70a760213ab552e93eebc57969-450x300.jpg', count: 3,
     price: 592}]);
-  const BookPage = withMessage(Booking)
-  const CareerPage = withMessage(Career)
-  
-  return (
-    
-    <div className="App">
-      <div className='main'>
-        
-      <Navbar/>
-      <Routes>
-      <Route path='/' element={<Cart items={cartItems} /> }/>
-      <Route path='/booking' element={<BookPage/> }/>
-      <Route path='/contacts' element={<Contacts/>}/>
-      <Route path='/menu' element={<MenuPage />}/>
-      <Route path='/career' element={<CareerPage/>}/>
-      <Route path='/gallery' element={<GalleryPage />} />
-      </Routes>
-      </div>
+	const BookPage = withMessage(Booking);
+	const CareerPage = withMessage(Career);
 
-     <Footer>
-      <IconsBar/>
-     </Footer>
-     
-      </div>
-      
-  );
+	return (
+		<div className="App">
+			<div className="main">
+				<Navbar />
+				<Routes>
+					<Route path="/" element={<Cart items={cartItems} />} />
+					<Route path="/booking" element={<BookPage />} />
+					<Route path="/contacts" element={<Contacts />} />
+					<Route path="/delivery" element={<DeliveryPage />} />
+					<Route path="/menu" element={<MenuPage />} />
+					<Route path="/career" element={<CareerPage />} />
+					<Route path="/gallery" element={<GalleryPage />} />
+				</Routes>
+			</div>
+
+			<Footer>
+				<IconsBar />
+			</Footer>
+		</div>
+	);
 }
 
 export default App;
