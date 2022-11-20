@@ -10,10 +10,10 @@ import Career from "./components/career/career";
 import Contacts from "./pages/contacts/contacts";
 import GalleryPage from "./pages/gallery/galleryPage";
 import withMessage from "./common/hooks.js/withMessage";
+import { DeliveryPage } from "./pages/deliveryPage/deliveryPage";
 
 function App() {
 	const BookPage = withMessage(Booking);
-	const CareerPage = withMessage(Career);
 	const CareerPage = withMessage(Career);
 
 	return (
