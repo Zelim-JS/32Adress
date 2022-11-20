@@ -19,8 +19,12 @@
 }
 
 @media (max-width:959px) {
+    .main-content{
+        flex-direction: column;
+    }
     .corousel-main{
-        display: none;
+        padding: 20px;
+        display: block;
     }
 }
 

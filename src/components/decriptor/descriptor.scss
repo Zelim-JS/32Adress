@@ -41,13 +41,7 @@
   }
 }
 
-.descriptor-grid{
-  display: grid;
-  grid-template-columns: 80px 1fr;
-  grid-template-areas: 'logo textDescr'
-                        'textDescr textDescr'
-                        'textDescr textDescr';
-}
+
 
 @media (max-width:425px) {
   .wrapper-descriptor {

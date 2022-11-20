@@ -1,5 +1,5 @@
 import React from "react";
-import { CardButton } from "./cardButton/cardButton";
+import "./card.scss";
 
 const sss = {
 	img: "https://vkusvill.ru/upload/resize/343192/343192_1200x600x70_c.webp",
@@ -21,7 +21,7 @@ export function Card({
 			/>
 			<p className="delivery-item-description">{description}</p>
 			<p className="delivery-item-price">{price}</p>
-			<CardButton />
+			<button className="delivery-item-button">Добавить в заказ</button>
 		</div>
 	);
 }

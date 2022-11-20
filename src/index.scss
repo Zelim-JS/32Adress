@@ -14,7 +14,39 @@
   margin: 0;
   font-family: 'Open Sans', sans-serif;
 }
+.book-wrapper{
+  display: grid;
+  grid-template-rows: 70px 1fr 90px;
+  grid-template-areas:
+    "label"
+    "main"
+    "control";
+  width: 520px;
+  min-height: 620px;
+  background-color: var(--white);
+  margin: 40px auto 100px;
+  color: var(--black);
+  justify-content: center;
+  align-items:center;
+}
 
+
+
+
+@media (max-width: 760px) {
+  .book-wrapper {
+    width: 440px;
+  }
+
+}
+
+@media (max-width: 550px) {
+  .book-wrapper {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+}
 
 .menu-link{
   color:white;

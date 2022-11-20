@@ -1,19 +1,18 @@
-.icon{
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    padding: 5px;
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-    transition: background-color 0.2s linear;
-}
-.icon:hover{
-    background-color: var(--pink);
-  
-}
+.wrapper-icons {
+	display: flex;
+	gap: 20px;
 
-.wrapper-icons{
-    display: flex;
-    gap: 20px;
+	.icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 5px;
+		width: 35px;
+		height: 35px;
+		cursor: pointer;
+		transition: background-color 0.2s linear;
+	}
+	.icon:hover {
+		background-color: var(--pink);
+	}
 }
