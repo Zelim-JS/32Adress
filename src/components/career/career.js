@@ -1,9 +1,9 @@
 import {useEffect, useState} from 'react'
 import { Formik } from "formik";
 import * as yup from "yup";
-import LogoComponent from '../../components/svg/LogoComponent'
+import LogoComponent from '../svg/LogoComponent'
 
-function CareerPage() {
+function Career() {
     const [height, setHeight] = useState(42)
     const validationSchema = yup.object().shape({
         user_name: yup.string().min(3, 'Минимум 3 символа').matches(/^[a-z]+$/, "Должны быть только буквы").typeError('Должно быть строкой').required('Обязательное поле'),
@@ -87,4 +87,4 @@ function CareerPage() {
   )
 }
 
-export default CareerPage
+export default Career

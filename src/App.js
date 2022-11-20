@@ -6,7 +6,7 @@ import IconsBar from "./components/iconsBar/iconsBar";
 import Footer from "./components/footer/footer";
 import Booking from "./components/booking/booking";
 import MenuPage from "./pages/menuPage/menuPage";
-import CareerPage from "./pages/careerPage/careerPage";
+import Career from "./components/career/career";
 import Contacts from "./pages/contacts/contacts";
 import GalleryPage from "./pages/gallery/galleryPage";
 import { DeliveryPage } from "./pages/deliveryPage/deliveryPage";
@@ -14,6 +14,7 @@ import withMessage from "./common/hooks.js/withMessage";
 
 function App() {
 	const BookPage = withMessage(Booking);
+	const CareerPage = withMessage(Career);
 
 	return (
 		<div className="App">
