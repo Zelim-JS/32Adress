@@ -8,9 +8,10 @@ function Contacts() {
     zoom: 15,
   };
   return (
+    
     <div className="contacts-wrapper">
       <div className="contacts-connection">
-        <a className="contacts-number" href="+79850390039">
+        <a className="contacts-number" href="tel:+79850390039">
           + (798)503-90-039
         </a>
         <a className="contacts-whats" href="https://wa.me/+79850390039">

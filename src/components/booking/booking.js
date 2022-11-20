@@ -6,7 +6,7 @@ import emailjs from '@emailjs/browser';
 import { Formik } from "formik";
 import * as yup from "yup";
 
-function Booking({succes, error}) {
+function Booking({succes, error, loading}) {
   const [height, setHeight] = useState(42);
   const [status, setStatus] = useState(null);
   const validationSchema = yup.object().shape({
@@ -19,8 +19,8 @@ function Booking({succes, error}) {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
-    emailjs.sendForm('service_qhako9q', 'template_8ks49ae', form.current, '2T7QvaI7kHZVYd3VK')
+    loading()
+    emailjs.sendForm('service_qhako9q', 'template_', form.current, '2T7QvaI7kHZVYd3VK')
       .then((res) => {
           succes()
       }, (err) => {

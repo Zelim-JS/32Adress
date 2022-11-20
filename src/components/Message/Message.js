@@ -2,7 +2,9 @@
 import './message.scss';
 import {Link} from 'react-router-dom';
 import LogoComponent from '../svg/LogoComponent';
-function Message({message, Icon}) {
+function Message({message, Icon, loading}) {
+
+
   return (
     <div className='book-wrapper'>
       <div className='book-label'>
@@ -12,11 +14,11 @@ function Message({message, Icon}) {
           <div><Icon size={50} /></div>
           <div className='message-text'>{message}</div>
       </div>
-        <div className='message-btn'>
-          <Link to={'/'}>
+        {!loading && <div className='message-btn'>
+          <Link  to={'/'}>
             <button>Вернутся на главную</button>
           </Link>
-        </div>
+        </div>}
     </div>
   )
 }
