@@ -21,8 +21,8 @@ function MenuPage() {
 
 	return (
 		<div className="menu-page-wrapper">
-			{menuPageArr.map((i) => {
-				return <MenuItem name={i.name} img={i.img} src={i.src} />;
+			{menuPageArr.map((i, ind) => {
+				return <MenuItem key={ind} name={i.name} img={i.img} src={i.src} />;
 			})}
 		</div>
 	);
