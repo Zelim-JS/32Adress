@@ -1,27 +1,26 @@
 import React from "react";
 import "./card.scss";
 
-const sss = {
-	img: "https://vkusvill.ru/upload/resize/343192/343192_1200x600x70_c.webp",
-	descr: "Какая-нибудь еда",
-	price: "299",
-};
+
 
 export function Card({
-	image = sss.img,
-	description = sss.descr,
-	price = sss.price,
+	img, 
+	name,
+	price,
+	count,
+	id,
+	addItem
 }) {
 	return (
 		<div className="delivery-item">
 			<img
 				className="delivery-item-image"
-				src={image}
-				alt={description}
+				src={img}
+				alt='image'
 			/>
-			<p className="delivery-item-description">{description}</p>
+			<p className="delivery-item-description">{name}</p>
 			<p className="delivery-item-price">{price}</p>
-			<button className="delivery-item-button">Добавить в заказ</button>
+		<button onClick={() => {addItem({img, name, price, id, count}, id)}} className="delivery-item-button">Добавить в заказ</button>
 		</div>
 	);
 }

@@ -16,7 +16,7 @@ function Booking({succes, error, loading, items}) {
     user_date: yup.date().required('Выберите дату')
   })
   const form = useRef()
-  const goods = items.map(i => `name: ${i.name} колл ${i.count}`).join(' ')
+ 
   
   const sendEmail = (e) => {
     e.preventDefault();
@@ -100,14 +100,7 @@ function Booking({succes, error, loading, items}) {
                         } style={{height: height + 'px'}}  name='user_comment' />
                   </div>
 
-                  <div className='book-description' style={{display: 'none'}}>
-                      <label className='label'  htmlFor='user_items'>Товары</label>
-                      <textarea className='book-input' value={goods} onChange={(e) => { 
-                        if(e.target.scrollHeight <= 85){
-                          setHeight(e.target.scrollHeight)}
-                        }
-                        } style={{height: height + 'px'}}  name='user_items' />
-                  </div>
+            
               
               </div>
 
