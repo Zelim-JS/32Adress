@@ -49,25 +49,29 @@
 
 @media (max-width: 1024px) {
 	.delivery-item {
-		min-width: 280px;
-		min-height: 385px;
+		width: 280px;
+		height: 385px;
 	}
 	.delivery-item-image {
-		min-width: 280px;
+		width: 100%;
 		height: 180px;
 	}
 }
 @media (max-width: 768px) {
 	.delivery-item {
-		min-width: 280px;
-		min-height: 385px;
+		width: 250px;
+		
+		height: 385px;
 	}
 	.delivery-item-image {
-		min-width: 280px;
+		min-width: 100%;
 		height: 180px;
 	}
 }
-@media (max-width: 426px) {
+
+
+
+@media (max-width: 519px) {
 	.delivery-item {
 		width: 385px;
 		height: 430px;
