@@ -1,6 +1,10 @@
 .book-wrapper {
   
 
+  
+  }
+
+
   .book-label {
     display: flex;
     grid-area: "label";
@@ -56,41 +60,47 @@
         align-items: center;
       }
     }
+
+  
+}
+
+.book-control {
+  display: flex;
+  grid: "control";
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  p {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--grey);
+  }
+  .order{
+    width: 80%;
+    margin: 15px auto 0;
+    height: 40px;
+  }
+  button {
+    width: 120px;
+    border-radius: 5px;
+    height: 35px;
+    background: unset;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+    transition: background 0.2s linear;
+    cursor: pointer;
+  }
+  .button-active {
+    border: unset;
+    color: var(--white);
+    background: var(--green);
   }
 
-  .book-control {
-    display: flex;
-    grid: "control";
-    gap: 10px;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 32px;
-    p {
-      font-size: 13px;
-      font-weight: 300;
-      color: var(--grey);
-    }
-    button {
-      width: 120px;
-      border-radius: 5px;
-      height: 35px;
-      background: unset;
-      border: 2px solid var(--secondary);
-      color: var(--secondary);
-      transition: background 0.2s linear;
-      cursor: pointer;
-    }
-    .button-active {
-      border: unset;
-      color: var(--white);
-      background: var(--green);
-    }
-
-    .button-active:hover {
-      border: unset;
-      color: var(--white);
-      background: #30d004;
-    }
+  .button-active:hover {
+    border: unset;
+    color: var(--white);
+    background: #30d004;
   }
 }
 
