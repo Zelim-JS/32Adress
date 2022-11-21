@@ -7,7 +7,7 @@ import CartButton from '../../components/cartButton/cartButton'
 import "./deliveryPage.scss";
 
 const deliveryItems = [
-	{id:1,name: 'Цезарь с куриной грудкой на гриле', img: 'https://eda.yandex/images/1380298/9057ba70a760213ab552e93eebc57969-450x300.jpg', count: 3,
+	{id:1,name: 'Цезарь с куриной грудкой на гриле', img: 'https://eda.yandex/images/1380298/9057ba70a760213ab552e93eebc57969-450x300.jpg', count: 1,
     price: 592},
 	{id:2,name: 'Цезарь с бараниной и грудкой на гриле', img: 'https://eda.yandex/images/1380298/9057ba70a760213ab552e93eebc57969-450x300.jpg', count: 1,
     price: 200},
