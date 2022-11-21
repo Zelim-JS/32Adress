@@ -37,7 +37,7 @@ function App() {
 
 const addItem = useCallback((item, id) => {
 	
-	if(cartItems.find(i => i.id === id)){
+	if(cartItems.find(i => i.id === item.id)){
 		setCartItems(items => items.map(i => i.id === id ? {...i, count: i.count++} : i))
 		
 	}else{

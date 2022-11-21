@@ -22,7 +22,7 @@ export function DeliveryPage({decItem, addItem, removeItem, incItem, cartItems})
 	const [showCart, setShowCart] = useState(false);
 	//  [countOfItems, setCountOfItems] = useState(0);
 
-	//  const countOfItems = cartItems.reduce((acc, i) => acc + i.count, 0)
+	 const countOfItems = cartItems.reduce((acc, i) => acc + i.count, 0)
 
 
 
@@ -45,7 +45,7 @@ const closeCartbtn = (e) => {
 	return (
 		
 		<div className="delivery-page-wrapper">
-			{cartItems.length > 0 && <CartButton countOfItems={0} openCart={openCart} />}
+			{cartItems.length > 0 && <CartButton countOfItems={countOfItems} openCart={openCart} />}
 			{showCart && <Cart closeCartbtn={closeCartbtn} closeCart={closeCart} remove={removeItem} inc={incItem} dec={decItem} items={cartItems} />}
 			<div className="delivery-title-wrapper">
 				<h1 className="delivery-title"> Меню доставки</h1>
