@@ -2,6 +2,8 @@
   margin: 0 auto;
   text-align: center;
   margin-top: 100px;
+  position: relative;
+  height: 100vh;
 }
 
 .contacts-connection {
@@ -64,9 +66,26 @@
 
 .map {
   width: 100%;
-  height: 30%;
+  height: 100%;
+}
+
+.map-wrapper{
+  display: block;
   position: absolute;
+  margin-top: 10px;
+  height: 30%;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+
+}
+
+@media (max-width: 426px) {
+
+  .contacts-wrapper {
+    margin-top: 40px;
+  }
+
+
+  
 }
