@@ -3,24 +3,29 @@ import * as yup from 'yup'
 import './cart.scss';
 import cn from 'classnames';
 import CartItem from '../cartItem/cartItem';
+import {AiOutlineClose} from 'react-icons/ai'
 import { Formik } from 'formik';
-function Cart({items}) {
+function Cart({items, dec, inc, remove,closeCart, closeCartbtn}) {
+  
   const [height, setHeight] = useState(42)
   const validationSchema = yup.object().shape({
       user_name: yup.string().min(3, 'Минимум 3 символа').matches(/^[a-zA-Zа-яА-Я]+$/, "Должны быть только буквы").typeError('Должно быть строкой').required('Обязательное поле'),
       user_phone:yup.string().matches(/^[0-9]+$/, "Должны быть только цифры").min(10, 'Укажите полный номер телефона 10 цифр').max(20, 'Введите корректный номер').required('Обязательное поле'),
       user_address: yup.string().min(3, 'Минимум 5 символа').matches(/^[a-zA-Zа-яА-Я]+$/, "Должны быть только буквы").required('Обязательное поле')
-    })
-   
+    }) 
 
   return (
-    <div className='cart-wrapper'>
+    <div onClick={closeCart} className='cart-background'>
+      <div className='cart-close-btn'>
+          <AiOutlineClose onClick={closeCartbtn}/>
+      </div>
+        <div className='cart-wrapper'>
         <div className='cart-title'>
             <h2>Ваш заказ:</h2>
         </div>
         <div className='cart-items'>
                 {items.map((i, ind) =>{
-                  return <CartItem key={ind} name={i.name} img={i.img} price={i.price} count={i.count} /> 
+                return <CartItem remove={remove} inc={inc} dec={dec} id={i.id}key={i.id} name={i.name} img={i.img} price={i.price} count={i.count} /> 
                 })}
                 
         </div>
@@ -93,6 +98,7 @@ function Cart({items}) {
         
         </Formik>
         </div>
+    </div>
     </div>
   )
 }

@@ -4,44 +4,30 @@ import { CardGroupTitle } from "../../components/card/cardGroupTitle/cardGroupTi
 import "./deliveryPage.scss";
 
 const deliveryItems = [
-	{
-		kategory: "Cалаты",
-		items: [
-			"Греческий салат с оливками каламата",
-			"Цезарь с куриной грудкой на гриле",
-			"Цезарь с креветками",
-			"Битый огурец и лосось сашими / гриль",
-			"Тёплый салат с осьминогом",
-			"Буратта с томатами и шпинатом",
-		],
-	},
-	{
-		kategory: "Рыба",
-		items: [
-			"Мидии в винном соусе",
-			"Филе сибаса с цукини на гриле",
-			"Стейк лосося на гриле / на пару",
-			"Креветки на гриле со спайси соусом",
-			"Жаренный рис с морепродуктами",
-			"Бургер с крабом",
-		],
-	},
+	{id:1,name: 'Цезарь с куриной грудкой на гриле', img: 'https://eda.yandex/images/1380298/9057ba70a760213ab552e93eebc57969-450x300.jpg', count: 3,
+    price: 592},
+	{id:2,name: 'Цезарь с бараниной и грудкой на гриле', img: 'https://eda.yandex/images/1380298/9057ba70a760213ab552e93eebc57969-450x300.jpg', count: 1,
+    price: 200},
+	{id:3,name: 'Цезарь с куриной грудкой на гриле', img: 'https://eda.yandex/images/1380298/9057ba70a760213ab552e93eebc57969-450x300.jpg', count: 1,
+    price: 300},
 ];
 
-export function DeliveryPage() {
+export function DeliveryPage({addItem}) {
+
 	return (
 		<div className="delivery-page-wrapper">
 			<div className="delivery-title-wrapper">
 				<h1 className="delivery-title"> Меню доставки</h1>
 			</div>
 			<div className="delivery-items-wrapper">
-				{deliveryItems[0].items.map((i) => {
-					return <Card description={i} />;
+				{deliveryItems.map((i) => {
+					return <Card count={i.count} key={i.id} id={i.id} name={i.name} price={i.price} img={i.img} addItem={addItem} />;
 				})}
-				{deliveryItems[1].items.map((i) => {
-					return <Card description={i} />;
-				})}
+				
 			</div>
 		</div>
 	);
 }
+
+
+

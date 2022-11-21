@@ -1,5 +1,26 @@
+
+.cart-background{
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.914);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.cart-close-btn{
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
 .cart-wrapper{
   display: flex;
+ 
   flex-direction: column;
   width: 520px;
   min-height: 620px;
@@ -7,7 +28,6 @@
   margin: 40px auto 100px;
   padding: 20px 30px;
   color: var(--black);
-
   .cart-title{
     width: 100%;
     font-size: 16px;
