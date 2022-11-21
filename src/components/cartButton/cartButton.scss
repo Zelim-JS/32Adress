@@ -7,13 +7,27 @@
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.523);
     position: fixed;
-    top: 50px;
+    top: 160px;
     right: 20px;
     font-size: 50px;
     color: black;
     font-weight: 300;
     cursor: pointer;
     transition: background-color 0.2s linear;
+    .cart-info{
+        display: flex;
+        background-color: rgb(186, 46, 46);
+        color:rgb(255, 255, 255);
+        justify-content: center;
+        align-items:center;
+        position: absolute;
+        min-height: 30px;
+        min-width: 30px;
+        border-radius: 50%;
+        font-size: 14px;
+        bottom: -10px;
+        right: 0;
+    }
 }
 
 .cartButton:hover{
@@ -25,5 +39,8 @@
         height: 60px;
         width: 60px;
         font-size: 35px;
+        .cart-info{
+            bottom: -20px;
+        }
     }
 }

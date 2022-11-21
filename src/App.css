@@ -19,11 +19,11 @@
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     color: white;
-    padding: 10px 50px;
+   
 }
 
 
-@media (max-width:959px) {
+/* @media (max-width:959px) {
     .main{
         padding: 10px 10px;
     }
@@ -33,5 +33,5 @@
     .main{
         padding: 10px 0;
     }
-}
+} */
 
