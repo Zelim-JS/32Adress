@@ -44,7 +44,15 @@
 	border-radius: 30px;
 	font-weight: 600;
 	color: white;
+	cursor: pointer;
+	transition: background-color 0.2s linear;
 	
+}
+.delivery-item-button:hover{
+	background-color: #ca7f57;
+}
+.delivery-item-button:active{
+	background-color: #e59063;
 }
 
 @media (max-width: 1024px) {

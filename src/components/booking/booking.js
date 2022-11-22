@@ -84,7 +84,7 @@ function Booking({succes, error, loading, items}) {
 
                   <div className='book-description'>
                       <label className='label'  htmlFor='user_phone'>Ваш номер телефона</label>
-                      <input pattern='\+(7 [346789]\d\d \d{3}(-\d\d){2}|1(\s[2-9]\d\d){2}(-\d\d){2}|[2345689] \d{3} \d{3}(-\d{1,2}){2,3})' className='book-input name'  name='user_phone' 
+                      <input  className='book-input name'  name='user_phone' 
                         onBlur={handleBlur}
                         value={values.user_phone}
                        

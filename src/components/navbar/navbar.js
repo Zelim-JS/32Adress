@@ -3,7 +3,7 @@ import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai';
 import './navbar.scss';
 import { Link } from 'react-router-dom'
 import LogoComponent from '../svg/LogoComponent';
-const menuArr = [{name:'Забронировать', link: '/booking'}, {name:'Меню',link: '/menu'}, {name:'Доставка',link: '/delivery'}, {name:'Контакты',link: '/contacts'}, {name:'Карьера',link: '/career'}, {name:'Галлерея',link: '/gallery'}]
+const menuArr = [{name:'Забронировать', link: '/booking'},{name:'Галлерея',link: '/gallery'}, {name:'Меню',link: '/menu'}, {name:'Доставка',link: '/delivery'},  {name:'Карьера',link: '/career'}, {name:'Контакты',link: '/contacts'}]
 
 function Navbar() {
   const [nav, setNav] = useState(false);

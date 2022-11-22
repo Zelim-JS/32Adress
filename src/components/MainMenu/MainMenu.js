@@ -9,7 +9,7 @@ function MainMenu() {
     <div className='main-menu-wrapper'>
         {/* <h1>Меню</h1> */}
         <div className='main-menu-item'>
-            <img src='https://sun9-64.userapi.com/impg/E_SPGlKeWWq9F-f_QgIrHNEORzgc9WE-O1r_Ug/-4pTtSUzJ68.jpg?size=763x1080&quality=96&sign=ce42f223aa374d4c804f195df92aea29&type=album'/>
+            <img src='assets/menu/1.jpg'/>
         </div>
         <Link to={'/menu'}><button className='main-menu-btn'>Открыть полное меню</button></Link>
     </div>

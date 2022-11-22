@@ -18,7 +18,9 @@ function Cart({items, dec, inc, remove,closeCart, closeCartbtn, succes, error, l
   const order = items.map(i => {
     return `Название: ${i.name},  Колл: ${i.count}  `
   }).join('\n')
-  
+
+  const totalSum = items.reduce((acc, i) => acc + (i.count * i.price), 0)
+
   const form = useRef()
     ///Оптимизировать 
   const sendEmail = (e) => {
@@ -50,6 +52,7 @@ function Cart({items, dec, inc, remove,closeCart, closeCartbtn, succes, error, l
                 })}
                 
         </div>
+        <div className='cart-result'>Сумма заказа: {totalSum}</div>
         <div className='cart-order'>
         <Formik
         initialValues={{
@@ -102,7 +105,7 @@ function Cart({items, dec, inc, remove,closeCart, closeCartbtn, succes, error, l
                             } style={{height: height + 'px'}}  name='user_comment' />
                       </div>
                       <div className='book-description' style={{display: 'none'}}>
-                          <textarea placeholder='Комментарий' className='book-input' value={order}   name='user_order' />
+                          <textarea onChange={handleChange} placeholder='Комментарий' className='book-input' value={order}   name='user_order' />
                       </div>
                   
                   </div>

@@ -74,9 +74,6 @@ const incItem = useCallback((id) =>{
 }, [cartItems])
 
 	
-
-
-
 	return (
 		<div className="App">
 			

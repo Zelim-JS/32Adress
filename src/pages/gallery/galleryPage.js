@@ -18,7 +18,6 @@ function GalleryPage() {
     }
   },[show])
 
-
   useEffect(() =>{
     if(window.innerWidth <= 829){
       setMobile(true)
