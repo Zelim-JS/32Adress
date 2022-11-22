@@ -20,7 +20,7 @@ export function Card({
 			/>
 			<p className="delivery-item-description">{name}</p>
 			<p className="delivery-item-price">{price} руб</p>
-		<button onClick={() => {addItem({img, name, price, id, count}, id)}} className="delivery-item-button">Добавить в заказ</button>
+		<button onClick={() => {addItem({img, name, price, id, count})}} className="delivery-item-button">Добавить в заказ</button>
 		</div>
 	);
 }

@@ -35,10 +35,11 @@ function App() {
 	setCartItems(newItem)
 }
 
-const addItem = useCallback((item, id) => {
+const addItem = useCallback((item) => {
 	
 	if(cartItems.find(i => i.id === item.id)){
-		setCartItems(items => items.map(i => i.id === id ? {...i, count: i.count++} : i))
+		const newArr = cartItems.map(i => i.id === item.id ? {...i, count: ++i.count} : i)
+		setCartItems(newArr)
 		
 	}else{
 		setCartItems(items => [...items, item])
