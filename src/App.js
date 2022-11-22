@@ -79,20 +79,25 @@ const incItem = useCallback((id) =>{
 
 	return (
 		<div className="App">
+			
 			<div className="main">
-				<Navbar />
+			<Navbar />
 				
 				<Routes>
 					<Route path="/" element={<MainPage/>} />
 					<Route path="/booking" element={<BookPage />} />
-					<Route path="/contacts" element={<Contacts />} />
+					{/* <Route path="/contacts" element={} /> */}
 					<Route path="/delivery" element={<DeliveryPage clearCart={clearCart} decItem={decItem} cartItems={cartItems} incItem={incItem} removeItem={removeItem} addItem={addItem} />} />
-					<Route path="/menu" element={<MenuPage />} />
+					{/* <Route path="/menu" element={} /> */}
 					<Route path="/career" element={<CareerPage />} />
 					<Route path="/gallery" element={<GalleryPage />} />
 				</Routes>
+				
 			</div>
-
+			
+			
+			
+			
 			<Footer>
 				<IconsBar />
 			</Footer>
