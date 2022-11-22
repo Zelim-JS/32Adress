@@ -28,8 +28,10 @@
 
 
 @media (max-width:1200px) {
-  .menu-page-title {
-    font-size: 18px;
+  .menu-item-wrapper{
+    .menu-page-title {
+      font-size: 18px;
+    }
   }
 }
 @media (max-width:769px) {

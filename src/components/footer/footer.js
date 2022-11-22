@@ -4,7 +4,7 @@ function Footer({children}) {
   return (
     <footer className='footer'>
       <div className='footer-text'>
-      © 2022 Наш адрес: прос Жуковского дом 32/119
+      © 2022 Наш адрес: прос Маршала Жукова дом 32/119
       </div>
       {children}
      </footer>

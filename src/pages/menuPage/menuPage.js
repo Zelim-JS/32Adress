@@ -21,7 +21,6 @@ function MenuPage() {
 
 	return (
 		<div className="menu-page-wrapper">
-			<div className="menu-page-title">Меню</div>
 			<div className="menu-page-flex">
 				{menuPageArr.map((i, ind) => {
 					return <MenuItem key={ind} name={i.name} img={i.img} src={i.src} />;

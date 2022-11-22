@@ -29,7 +29,7 @@ function Contacts() {
       <div className="contacts-adress">
         Адрес:
         <div className="contacts-adress-text">
-          Проспект Жуковского дом32-119
+          Проспект Маршала Жукова дом32-119
         </div>
       </div>
      <div className="map-wrapper">
