@@ -88,7 +88,7 @@ const incItem = useCallback((id) =>{
 					<Route path="/booking" element={<BookPage />} />
 					{/* <Route path="/contacts" element={} /> */}
 					<Route path="/delivery" element={<DeliveryPage clearCart={clearCart} decItem={decItem} cartItems={cartItems} incItem={incItem} removeItem={removeItem} addItem={addItem} />} />
-					{/* <Route path="/menu" element={} /> */}
+					<Route path="/menu" element={<MenuPage/>} />
 					<Route path="/career" element={<CareerPage />} />
 					<Route path="/gallery" element={<GalleryPage />} />
 				</Routes>
