@@ -45,7 +45,7 @@ const addItem = useCallback((item) => {
 		setCartItems(items => [...items, item])
 	}
 	
-},[cartItems])
+},[cartItems]);
 
 const removeItem = useCallback((id) =>{
 	if(window.confirm('Вы хотите удалить позицию')){

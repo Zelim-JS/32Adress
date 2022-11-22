@@ -7,7 +7,7 @@
     gap: 20px;
 
     .cart-thumb{
-        min-width: 70px;
+        width: 200px;
         height: 70px;
         border-radius: 7px;
         overflow: hidden;
@@ -51,16 +51,16 @@
         .cart-item-title{
             display: flex;
             align-items:center;
-            width: 144px;
             height: 100px;
+            font-size: 15px;
         }
         
         .cart-item-count{
             display: flex;
-            min-width: 80px;
-            padding: 13px 20px 16px;
+            padding: 20px 0 16px;
             align-items:center;
-
+            font-weight: 500;
+            font-size: 14px;
 
             .cart-input::-webkit-outer-spin-button,
             .cart-input::-webkit-inner-spin-button {
@@ -85,6 +85,10 @@
         .cart-item-main{
             flex-direction: column;
             align-items:start;
+
+            .cart-item-count{
+                padding: 0;
+            }
             .cart-item-title{
                 width: 100%;
                 height: auto;
@@ -97,12 +101,44 @@
   }
 
 
+
   
+  @media (max-width: 550px) {
+    .cart-item-wrapper {
+      width: 100%;
+      margin-bottom: 0;
+      .cart-item-main{
+        .cart-item-title{
+            font-size: 15px;
+        }
+        .cart-item-price{
+            margin-left: 10px;
+            font-size: 15px;
+        }
+      }
+    }
+  
+  }
+  
+    
 @media (max-width: 460px) {
     .cart-item-wrapper{
+        .cart-thumb{
+            width: 180px;
+            height: 70px;
+            border-radius: 7px;
+            overflow: hidden;
+            img{
+                width: 100%;
+            }
+        }
+    
         .cart-item-main{
             justify-content: start;
             align-items:start;
+            .cart-item-title{
+                font-size: 14px;
+            }
             .cart-item-count{
                 padding: 13px 0 5px;
             }
@@ -111,13 +147,4 @@
     
   
   }
-  
-  @media (max-width: 550px) {
-    .cart-wrapper {
-      width: 100%;
-      margin-bottom: 0;
-    }
-  
-  }
-
   
