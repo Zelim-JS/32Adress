@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./contacts.scss";
 import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
-
+import LogoComponent from "../../components/svg/LogoComponent";
 function Contacts() {
   const defaultState = {
     center: [55.7744855,37.471647],
@@ -10,6 +10,7 @@ function Contacts() {
   return (
     
     <div className="contacts-wrapper">
+        <div style={{width: '160px'}}><LogoComponent /></div>
       <div className="contacts-connection">
         <a className="contacts-number" href="tel:+79850390039">
           + (798)503-90-039

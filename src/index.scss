@@ -22,7 +22,8 @@
     "main"
     "control";
   width: 520px;
-  height: 640px;
+  min-height: 640px;
+  max-height: 710px;
   background-color: var(--white);
   margin: 40px auto 100px;
   color: var(--black);
