@@ -10,16 +10,33 @@ import Career from './components/career/career';
 import Contacts from './pages/contacts/contacts';
 import GalleryPage from './pages/gallery/galleryPage';
 import withMessage from './common/hooks.js/withMessage';
-import {useCallback, useState} from 'react'
+import {useCallback, useState, useRef} from 'react'
 import {DeliveryPage} from './pages/deliveryPage/deliveryPage';
 
 
 
 function App() {
 	const [cartItems, setCartItems] = useState([]);
+	const [toContact, setToContact] = useState(false);
+	const contactsRef = useRef(null);
 	const BookPage = withMessage(Booking);
 	const CareerPage = withMessage(Career);
+	
 
+
+	///Костыль для скролла до элемента с переходом
+	const scroll = () =>{
+	  const coord = contactsRef.current.getBoundingClientRect().top + window.scrollY
+	  window.scrollTo({top: coord, behavior: 'smooth'})
+	  setToContact(false)
+	}
+	///Костыль для скролла до элемента с переходом
+
+
+	const moveToContact = () =>{
+		setToContact(true)
+	}
+  
 	const clearCart = () =>{
 		setCartItems([])
 	}
@@ -38,7 +55,7 @@ function App() {
 
 	setCartItems(newItem)
 }
-
+//Добавить предмет в корзину
 const addItem = (item) => {
 	
 	if(cartItems.find(i => i.id === item.id)){
@@ -50,7 +67,7 @@ const addItem = (item) => {
 	}
 	
 };
-
+///Убрать из корзины
 const removeItem = useCallback((id) =>{
 	if(window.confirm('Вы хотите удалить позицию')){
 		setCartItems(items =>{
@@ -61,7 +78,7 @@ const removeItem = useCallback((id) =>{
 	}
 }, [cartItems])
 
-
+///Увеличить колл предмета
 const incItem = useCallback((id) =>{
 	setCartItems(items => items.map(i =>{
 		if(i.id === id){
@@ -78,10 +95,10 @@ const incItem = useCallback((id) =>{
 		<div className="App">
 			
 			<div className="main">
-			<Navbar />
+			<Navbar moveToContact={moveToContact} />
 				
 				<Routes>
-					<Route path="/" element={<MainPage/>} />
+					<Route path="/" element={<MainPage contactsRef={contactsRef}  scroll={scroll} toContact={toContact}/>} />
 					<Route path="/booking" element={<BookPage />} />
 					{/* <Route path="/contacts" element={} /> */}
 					<Route path="/delivery" element={<DeliveryPage clearCart={clearCart} decItem={decItem} cartItems={cartItems} incItem={incItem} removeItem={removeItem} addItem={addItem} />} />
