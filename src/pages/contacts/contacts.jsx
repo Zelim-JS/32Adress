@@ -4,8 +4,8 @@ import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
 
 function Contacts() {
   const defaultState = {
-    center: [55.72092330517786,37.56091226242578],
-    zoom: 15,
+    center: [55.7744855,37.471647],
+    zoom: 16,
   };
   return (
     
@@ -34,7 +34,7 @@ function Contacts() {
      <div className="map-wrapper">
      <YMaps>
         <Map className="map" defaultState={defaultState}>
-          <Placemark geometry={[55.72092330517786,37.56091226242578]} />
+          <Placemark geometry={[55.774855,37.471647]} />
         </Map>
       </YMaps>
      </div>

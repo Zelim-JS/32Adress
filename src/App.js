@@ -11,7 +11,7 @@ import Contacts from './pages/contacts/contacts';
 import GalleryPage from './pages/gallery/galleryPage';
 import withMessage from './common/hooks.js/withMessage';
 import {useCallback, useState} from 'react'
-import {DeliveryPage} from './pages/deliveryPage/deliveryPage'
+import {DeliveryPage} from './pages/deliveryPage/deliveryPage';
 
 
 
@@ -19,6 +19,10 @@ function App() {
 	const [cartItems, setCartItems] = useState([]);
 	const BookPage = withMessage(Booking);
 	const CareerPage = withMessage(Career);
+
+	const clearCart = () =>{
+		setCartItems([])
+	}
 	
 	const decItem = (id) => {
 		const newItem = cartItems.map(i =>{
@@ -82,7 +86,7 @@ const incItem = useCallback((id) =>{
 					<Route path="/" element={<MainPage/>} />
 					<Route path="/booking" element={<BookPage />} />
 					<Route path="/contacts" element={<Contacts />} />
-					<Route path="/delivery" element={<DeliveryPage decItem={decItem} cartItems={cartItems} incItem={incItem} removeItem={removeItem} addItem={addItem} />} />
+					<Route path="/delivery" element={<DeliveryPage clearCart={clearCart} decItem={decItem} cartItems={cartItems} incItem={incItem} removeItem={removeItem} addItem={addItem} />} />
 					<Route path="/menu" element={<MenuPage />} />
 					<Route path="/career" element={<CareerPage />} />
 					<Route path="/gallery" element={<GalleryPage />} />

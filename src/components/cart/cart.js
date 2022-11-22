@@ -1,19 +1,40 @@
-import {useState, useEffect, useRef} from 'react'
+import {useState, useRef} from 'react'
 import * as yup from 'yup'
 import './cart.scss';
 import cn from 'classnames';
 import CartItem from '../cartItem/cartItem';
 import {AiOutlineClose} from 'react-icons/ai'
 import { Formik } from 'formik';
-function Cart({items, dec, inc, remove,closeCart, closeCartbtn}) {
+import emailjs from '@emailjs/browser';
+
+function Cart({items, dec, inc, remove,closeCart, closeCartbtn, succes, error, loading,clearCart}) {
   
   const [height, setHeight] = useState(42)
   const validationSchema = yup.object().shape({
       user_name: yup.string().min(3, 'Минимум 3 символа').matches(/^[a-zA-Zа-яА-Я]+$/, "Должны быть только буквы").typeError('Должно быть строкой').required('Обязательное поле'),
       user_phone:yup.string().matches(/^[0-9]+$/, "Должны быть только цифры").min(10, 'Укажите полный номер телефона 10 цифр').max(20, 'Введите корректный номер').required('Обязательное поле'),
-      user_address: yup.string().min(3, 'Минимум 5 символа').matches(/^[a-zA-Zа-яА-Я]+$/, "Должны быть только буквы").required('Обязательное поле')
+      user_address: yup.string().min(3, 'Минимум 5 символа').required('Обязательное поле')
     }) 
+  const order = items.map(i => {
+    return `Название: ${i.name},  Колл: ${i.count}  `
+  }).join('\n')
+  
+  const form = useRef()
+    ///Оптимизировать 
+  const sendEmail = (e) => {
+    e.preventDefault();
+    loading()
+    emailjs.sendForm('service_qhako9q', 'template_ic8gp', form.current, '2T7QvaI7kHZVYd3VK')
+      .then((res) => {
+        succes()
+      }, (err) => {
+        error()
+          
+      });
 
+      e.target.reset();
+  };
+  ////
   return (
     <div onClick={closeCart} className='cart-background'>
       <div className='cart-close-btn'>
@@ -39,16 +60,16 @@ function Cart({items, dec, inc, remove,closeCart, closeCartbtn}) {
         }}
         validationSchema={validationSchema}
         validateOnBlur
-        onSubmit={values => console.log(values)}
+        
         >
           {({values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty}) =>(
             
-            <div>
+            <form onSubmit={sendEmail} ref={form}>
                 <div className='book-label'>
                 
                 </div>
                 <div style={{borderBottom: 'none', paddingTop: '15px'}} className='book-main'>
-                  <div className='inputs-wrapper'>
+                  <div  className='inputs-wrapper'>
                       
                       <div className='book-description'>
                           <input placeholder='Имя' className='book-input'  name='user_name'
@@ -74,11 +95,14 @@ function Cart({items, dec, inc, remove,closeCart, closeCartbtn}) {
                           {touched.user_address && errors.user_address && <p className='error-message'>{errors.user_address}</p>}
                       </div>
                       <div className='book-description'>
-                          <textarea placeholder='Комментарий' className='book-input' onChange={(e) => { 
+                          <textarea placeholder='Комментарий' className='book-input'  onChange={(e) => { 
                             if(e.target.scrollHeight <= 85){
                               setHeight(e.target.scrollHeight)}
                             }
                             } style={{height: height + 'px'}}  name='user_comment' />
+                      </div>
+                      <div className='book-description' style={{display: 'none'}}>
+                          <textarea placeholder='Комментарий' className='book-input' value={order}   name='user_order' />
                       </div>
                   
                   </div>
@@ -89,11 +113,10 @@ function Cart({items, dec, inc, remove,closeCart, closeCartbtn}) {
                       <button
                         className={cn('order',isValid && dirty && 'button-active')}
                         disabled={!isValid && !dirty}
-                        onClick={handleSubmit}
                         type='submit'
                       >Отправить</button>
                 </div>
-            </div>
+            </form>
           )}
         
         </Formik>

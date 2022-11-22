@@ -2,11 +2,12 @@
 import './message.scss';
 import {Link} from 'react-router-dom';
 import LogoComponent from '../svg/LogoComponent';
-function Message({message, Icon, loading}) {
+function Message({message, Icon, loading, clearCart, cart=false}) {
 
 
   return (
-    <div className='book-wrapper'>
+  <div className='message-wrapper'>
+      <div className='book-wrapper'>
       <div className='book-label'>
                 <span>Бронирование стола</span> <span className='logo black'><LogoComponent color='black'/></span>
       </div>
@@ -16,10 +17,15 @@ function Message({message, Icon, loading}) {
       </div>
         {!loading && <div className='message-btn'>
           <Link  to={'/'}>
-            <button>Вернутся на главную</button>
+            <button onClick={() =>{
+              if(cart){
+                clearCart()
+              }
+            }}>Вернутся на главную</button>
           </Link>
         </div>}
     </div>
+  </div>
   )
 }
 

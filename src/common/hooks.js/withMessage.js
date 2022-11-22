@@ -2,7 +2,7 @@ import {useState} from 'react';
 import Message from '../../components/Message/Message';
 import {GrUserManager, GrTime} from 'react-icons/gr'
 import Spinner from '../../components/svg/Spinner';
-function withMessage(BaseComponent, items) {
+function withMessage(BaseComponent, items, cart=false, clearCart) {
     const succesMessage = 'Ваша заявка успешно отправлена. В ближайшее время вам перезвонит наш менеджер';
     const failMessage = 'Упс что-то пошло не так, пожалуйста попробуйте позже или позвоните нам по номеру';
     const loadingMessage = 'Идет отправка данных';
@@ -27,7 +27,7 @@ function withMessage(BaseComponent, items) {
 
        
         const component = loading ? <Message loading={loading} Icon={Spinner} message={loadingMessage}/> : error ? <Message loading={loading} Icon={GrTime} message={failMessage}/>
-        : !loading && !send ? <BaseComponent items={items} loading={loadingSend} succes={succesSend} error={errorSend}/> : <Message loading={loading} Icon={GrUserManager} message={succesMessage}/> 
+        : !loading && !send ? <BaseComponent {...props} items={items} loading={loadingSend} succes={succesSend} error={errorSend}/> : <Message clearCart={clearCart} cart={cart} loading={loading} Icon={GrUserManager} message={succesMessage}/> 
 
         return component
     }

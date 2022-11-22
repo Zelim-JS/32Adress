@@ -1,7 +1,7 @@
 import './booking.scss';
 
 import LogoComponent from '../svg/LogoComponent'
-import {useEffect, useState, useRef} from 'react'
+import { useState, useRef} from 'react'
 import emailjs from '@emailjs/browser';
 import { Formik } from "formik";
 import * as yup from "yup";
@@ -21,7 +21,7 @@ function Booking({succes, error, loading, items}) {
   const sendEmail = (e) => {
     e.preventDefault();
     loading()
-    emailjs.sendForm('service_qhako9q', 'template_8ks49ae', form.current, '2T7QvaI7kHZVYd3VK')
+    emailjs.sendForm('service_qhako9q', 'template_8ks49', form.current, '2T7QvaI7kHZVYd3VK')
       .then((res) => {
           succes()
       }, (err) => {
@@ -44,10 +44,9 @@ function Booking({succes, error, loading, items}) {
     }}
     validationSchema={validationSchema}
     validateOnBlur
-    onSubmit={values => console.log(values)}
+    
     >
       {({values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty}) =>(
-        
         <form onSubmit={sendEmail} ref={form} className='book-wrapper'>
             <div className='book-label'>
              <span> Бронирование стола</span> <span className='logo black'><LogoComponent color='black'/></span>
@@ -115,6 +114,7 @@ function Booking({succes, error, loading, items}) {
                   >Заказать</button>
             </div>
         </form>
+        
       )}
     
     </Formik>
