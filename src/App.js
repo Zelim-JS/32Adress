@@ -35,7 +35,7 @@ function App() {
 	setCartItems(newItem)
 }
 
-const addItem = useCallback((item) => {
+const addItem = (item) => {
 	
 	if(cartItems.find(i => i.id === item.id)){
 		const newArr = cartItems.map(i => i.id === item.id ? {...i, count: ++i.count} : i)
@@ -45,7 +45,7 @@ const addItem = useCallback((item) => {
 		setCartItems(items => [...items, item])
 	}
 	
-},[cartItems]);
+};
 
 const removeItem = useCallback((id) =>{
 	if(window.confirm('Вы хотите удалить позицию')){
