@@ -1,10 +1,22 @@
 import './mainPage.scss';
+import { useEffect, useRef } from 'react';
 import Descriptor from '../../components/decriptor/descriptor';
 import Corousel from '../../components/corousel/corousel';
-import MenuPage from '../menuPage/menuPage';
 import MainMenu from '../../components/MainMenu/MainMenu';
 import Contacts from '../contacts/contacts';
-function MainPage() {
+
+function MainPage({scroll, toContact, contactsRef}) {
+  
+  
+
+
+  useEffect(() =>{
+    if(toContact){
+      scroll()
+    }
+    
+  }, [toContact])
+
   return (
    <div>
      <div className='main-content'>
@@ -18,7 +30,7 @@ function MainPage() {
     {/* <MenuPage /> */}
     <MainMenu />
    </div>
-    <Contacts />
+    <Contacts refer={contactsRef} />
    </div>
 
   )
